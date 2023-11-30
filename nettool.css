@@ -4,9 +4,6 @@ body {
   background-color: #CD6BFE;
 }
 
-h2 {
-  background-color: #CD6BFE;
-}
 
 body {
   color:white;
@@ -18,6 +15,10 @@ h2 {
 
 h2 {
   background-color:white;
+}
+
+div {
+  border-radius: 20px 20px 20px 20px;
 }
 a {
   color: 	#80D1FF;
