@@ -12,9 +12,8 @@ h2 {
 }
 
 a {
-  color: 	#80D1FF;
   background-color: white;
-  bordar-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 d {
