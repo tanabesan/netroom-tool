@@ -2,26 +2,19 @@
 
 body {
   background-color: #CD6BFE;
-}
-
-
-body {
-  color:white;
+  color: white;
 }
 
 h2 {
   color: black;
-}
-
-h2 {
-  background-color:white;
-}
-
-h2 {
+  background-color: white;
   border-radius: 20px 20px 20px 20px;
 }
+
 a {
   color: 	#80D1FF;
+  background-color: white;
+  bordar-radius: 10px 10px 10px 10px;
 }
 
 d {
