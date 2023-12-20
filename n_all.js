@@ -5,7 +5,7 @@ let name_t  = textMsg.textContent;
          alert('ゲストはこのツールを使うことは出来ません！');
 
      } else {
-let com_t    = prompt(name_t + 'さんこんにちは！\nどのコマンドを使用しますか？\n\n【コマンド一覧】\n• nbot | botが起動します。\n• bosyuu | 新しい機能を募集してます。よかったら案を上げてください。');
+let com_t    = prompt(name_t + 'さんこんにちは！\nどのコマンドを使用しますか？\n\n【コマンド一覧】\n• nbot | botが起動します。\n• bosyuu | 新しい機能を募集してます。\n\n[最新アップデート]\n2023,12,20\nコマンド一覧追加。);
 
   switch (com_t) {
        case 'nbot':
