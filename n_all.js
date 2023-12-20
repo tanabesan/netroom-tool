@@ -1,3 +1,9 @@
+javascript:
+
+let url1 = location.protocol;
+let url2 = location.hostname;
+     if (url1 == 'https:' && url2 == 'netroom.co.jp'){
+
 let textMsg = document.getElementById('my_info_name');
 let name_t  = textMsg.textContent;
 
@@ -5,7 +11,7 @@ let name_t  = textMsg.textContent;
          alert('ゲストはこのツールを使うことは出来ません！');
 
      } else {
-let com_t    = prompt(name_t + 'さんこんにちは！\nどのコマンドを使用しますか？\n\n【コマンド一覧】\n• nbot | botが起動します。\n• bosyuu | 新しい機能を募集してます。\n\n[最新アップデート]\n2023,12,20\nコマンド一覧追加。');
+let com_t    = prompt(name_t + 'さんこんにちは！\nどのコマンドを使用しますか？\n\n【コマンド一覧】\n• nbot | botが起動します。\n• bosyuu | 新しい機能を募集してます。\n\n[最新アップデート]\n2023,12,21\nNETROOMでしか使用できなくなりました。\n\n2023,12,20\nコマンド一覧追加。');
 
   switch (com_t) {
        case 'nbot':
@@ -31,5 +37,8 @@ let com_t    = prompt(name_t + 'さんこんにちは！\nどのコマンドを�
 
        default:
          alert('404ERROR!\nそのコマンドは存在しないコマンド、あるいはまだ搭載できていないコマンドです。');
+     };
    };
+} else {
+         alert('ERROR!\nここはネットルームではありません！');
 };
