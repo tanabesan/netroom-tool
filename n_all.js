@@ -1,5 +1,3 @@
-javascript:
-
 let url1 = location.protocol;
 let url2 = location.hostname;
      if (url1 == 'https:' && url2 == 'netroom.co.jp'){
