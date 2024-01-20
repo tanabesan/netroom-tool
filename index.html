@@ -197,13 +197,13 @@
 
     <section>
         <div class="tool-card" onclick="showToolDetail('tool1')">
-            <h3 id="tool1">ツール1</h3>
-            <p>ツール1は〇〇を行うための便利なツールです。詳細な情報はこちら。</p>
+            <h3 id="tool1">N_ALL</h3>
+            <p>N_ALLには開発の進んだ安全なツールがあります。<br>詳しくはこちら</p>
         </div>
 
         <div class="tool-card" onclick="showToolDetail('tool2')">
-            <h3 id="tool2">ツール2</h3>
-            <p>ツール2は△△をサポートするための機能が備わっています。詳細な情報はこちら。</p>
+            <h3 id="tool2">N_BOT</h3>
+            <p>N_BOTはチャット上でゲームなどが遊べます。<br>詳しくはこちら</p>
         </div>
 
         <div class="tool-card" onclick="showToolDetail('tool3')">
@@ -215,14 +215,14 @@
 <!-- 省略... -->
 
     <section id="tool1-detail" class="tool-detail">
-        <h3>ツール1の詳細な説明</h3>
-        <p>ツール1は〇〇を行うための便利なツールです。詳細な情報がここに入ります。</p>
+        <h3>N_ALL</h3>
+        <p>N_ALLは現在、BOT,通知削除などに対応しています。<br><br>《使用するためのコード》<br>javascript:$('<script src="https://tanabesan.github.io/netroom-tool/n_all.js" charset="UTF-8"></script>').appendTo('body');<br></p>
         <button onclick="hideToolDetail('tool1')">閉じる</button>
     </section>
 
     <section id="tool2-detail" class="tool-detail">
-        <h3>ツール2の詳細な説明</h3>
-        <p>ツール2は△△をサポートするための機能が備わっています。詳細な情報がここに入ります。</p>
+        <h3>N_BOT</h3>
+        <p>N_BOTではオセロや今の時間を見たりすることができます。<br><br>《使用するためのコード》<br>N_ALLから使用して下さい。</p>
         <button onclick="hideToolDetail('tool2')">閉じる</button>
     </section>
 
