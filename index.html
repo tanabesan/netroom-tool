@@ -1,18 +1,277 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset=”utf-8″>
-<title> NETROOM TOOLS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETROOM TOOLS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(45deg, #007BFF, #333);
+        }
 
-<link rel="stylesheet" href="https://tanabesan.github.io/netroom-tool/nettool.css">
+        /* 共通のスタイル */
+        header, nav, section, footer {
+            padding: 1em;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        nav, footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #007BFF;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* ツールカードとボタンのスタイル */
+        .tool-card, .tool-detail button {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .tool-card {
+            width: 30%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin: 1em;
+            overflow: hidden;
+        }
+
+        .tool-card:hover, .tool-detail button:hover {
+            transform: translateY(-10px);
+        }
+
+        .tool-card h3 {
+            color: #007BFF;
+            margin-bottom: 0.5em;
+            transition: color 0.3s;
+        }
+
+        .tool-card:hover h3 {
+            color: #0056b3;
+        }
+
+        .tool-detail {
+            display: none;
+            padding: 2em;
+            background-color: #fff;
+            margin-top: 1em;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .tool-detail h3 {
+            color: #007BFF;
+        }
+
+        /* ボディの背景アニメーション */
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #007BFF 0%, #333 100%);
+            z-index: -1;
+            animation: backgroundScroll 60s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+　　/* 背景の波打つアニメーション */
+　　@keyframes backgroundWave {
+　　    0% {
+　　        transform: skewY(0deg);
+　　    }
+　　    50% {
+        transform: skewY(10deg);
+　　    }
+  　　  100% {
+　　        transform: skewY(0deg);
+　　    }
+　　}
+
+
+
+    h2 {
+        color: #007BFF;
+    }
+
+    /* 質問と回答のリスト */
+    .question {
+        margin-bottom: 1.5em;
+        padding: 1em;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+        color: #333;
+    }
+
+    p {
+        color: #555;
+    }
+    
+        #questions {
+        opacity: 0; /* 最初は非表示 */
+        transition: opacity 0.5s ease-in-out; /* トランジションを追加 */
+        /* 他のスタイル ... */
+    }
+    </style>
 </head>
 <body>
-<d><h1><font face="sans-serif">NETROOM TOOLS</font></h1>
-  <p><font face="sans-serif" size="5">netroom toolsへようこそ</font></p>
-    <b><font face="sans-serif" size="5">ここではnetroomのツールを取り扱っています。<font>
-      <a href=https://netroom.co.jp>netroomにアクセス</a></b></d>
-      <h2><p><b><font face="sans-serif">ツール一覧</b></p>
-        <p id="s"><font face= "sans-serif">・NETROOM SCRIPTS</p>
-</h2>
+
+    <header><h1>NETROOM TOOLS</h1></header>
+
+    <nav>
+        <a href="#">ホーム</a>
+        <a href="#">サービス</a>
+        <a href="#questions">質問</a>
+    </nav>
+
+    <section>
+        <div class="tool-card" onclick="showToolDetail('tool1')">
+            <h3 id="tool1">ツール1</h3>
+            <p>ツール1は〇〇を行うための便利なツールです。詳細な情報はこちら。</p>
+        </div>
+
+        <div class="tool-card" onclick="showToolDetail('tool2')">
+            <h3 id="tool2">ツール2</h3>
+            <p>ツール2は△△をサポートするための機能が備わっています。詳細な情報はこちら。</p>
+        </div>
+
+        <div class="tool-card" onclick="showToolDetail('tool3')">
+            <h3 id="tool3">ツール3</h3>
+            <p>ツール3は□□のためのツールで、〇〇を実現します。詳細な情報はこちら。</p>
+        </div>
+    </section>
+
+<!-- 省略... -->
+
+    <section id="tool1-detail" class="tool-detail">
+        <h3>ツール1の詳細な説明</h3>
+        <p>ツール1は〇〇を行うための便利なツールです。詳細な情報がここに入ります。</p>
+        <button onclick="hideToolDetail('tool1')">閉じる</button>
+    </section>
+
+    <section id="tool2-detail" class="tool-detail">
+        <h3>ツール2の詳細な説明</h3>
+        <p>ツール2は△△をサポートするための機能が備わっています。詳細な情報がここに入ります。</p>
+        <button onclick="hideToolDetail('tool2')">閉じる</button>
+    </section>
+
+    <section id="tool3-detail" class="tool-detail">
+        <h3>ツール3の詳細な説明</h3>
+        <p>ツール3は□□のためのツールで、〇〇を実現します。詳細な情報がここに入ります。</p>
+        <button onclick="hideToolDetail('tool3')">閉じる</button>
+    </section>
+    
+
+<section id="questions">
+    <h2>Q&A</h2>
+
+    <!-- 質問と回答のリスト -->
+    <div class="question">
+        <h3>Q. ブックマークレットとは何ですか？</h3>
+        <p>A.ブックマークレットは、ブラウザのブックマークバーに登録しておき、任意のウェブページでそのブックマークをクリックすることで特定の機能やスクリプトを実行できる小さなプログラムです。</p>
+    </div>
+
+    <div class="question">
+        <h3>Q. ブックマークレットを登録する手順は？</h3>
+        <p>A.<br>1. ブラウザのブックマークバーに新しいブックマークを作成します。<br>2. ブックマークのURL欄に、実行したいJavaScriptコードを記述します。<br>3. 作成したブックマークをブックマークバーにドラッグ＆ドロップするか、ブックマークのプロパティで「ブックマークバー」を選択します。</p>
+    </div>
+
+    <div class="question">
+        <h3>Q. ブックマークレットを使用する際の注意点は？</h3>
+        <p>A.ブックマークレットを使用する際は、信頼できるソースから提供されたものを使用することが重要です。不明なコードを実行するとセキュリティのリスクがあります。</p>
+    </div>
+</section>
+
+
+    <footer>&copy; 2024 NETROOM TOOLS</footer>
+
+    <script>
+        
+            const questionsSection = document.getElementById('questions');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                questionsSection.style.opacity = '1'; // 画面内に入ったら不透明にする
+                observer.unobserve(entry.target); // 一度表示されたら監視を停止する
+            }
+        });
+    }, options);
+
+    observer.observe(questionsSection);
+    
+        let currentToolId = null;
+
+        function showToolDetail(toolId) {
+            hideCurrentToolDetail();
+            const toolDetail = document.getElementById(toolId + '-detail');
+            toolDetail.style.display = 'block';
+            currentToolId = toolId;
+        }
+
+        function hideCurrentToolDetail() {
+            if (currentToolId) {
+                const currentToolDetail = document.getElementById(currentToolId + '-detail');
+                currentToolDetail.style.display = 'none';
+            }
+        }
+
+        function hideToolDetail(toolId) {
+            const toolDetail = document.getElementById(toolId + '-detail');
+            toolDetail.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
-
